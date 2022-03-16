@@ -17,7 +17,9 @@ def funkcija():
         veci = x2
     x = np.linspace(manji -1, veci +1, 100)
     y = -1*(a/b)*x + c/b
-    plt.plot(y)
+    plt.plot(x, y)
+    plt.plot(x1, y1, 'ro')
+    plt.plot(x2, y2, 'bo')
     naslov = (input("Ime grafa:"))
     uvjet = input("Želite li spremiti kao PDF?")
     if uvjet == 'da':
