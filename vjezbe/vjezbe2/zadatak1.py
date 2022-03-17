@@ -4,7 +4,6 @@ ax = plt.subplot()
 F = float(input("sila:"))
 m = float(input("masa:"))
 a = F/m
-t = np.linspace(0, 10, 500)
 v_lista = [0]
 x_lista = [0]
 a_lista = [F/m]
