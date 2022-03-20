@@ -10,7 +10,7 @@ def jednoliko_gibanje(F, v, t, m):
     a_lista = [F/m]
     t_lista = [0]
     dt = 0.1
-    for i in range (t):
+    for i in range (int(t/dt)):
         t_lista.append(i*dt)
         v_lista.append(v_lista[i]+a_lista[i]*dt)
         x_lista.append(x_lista[i]+v_lista[i]*dt)
@@ -37,7 +37,6 @@ def kosi_hitac(v0, t, kut):
     g = -9.81
     x0 = 0
     y0 = 0
-    t = np.linspace(0, 10, 500)
     vy_lista = []
     vx_lista = []
     x_lista = [0]
@@ -48,7 +47,7 @@ def kosi_hitac(v0, t, kut):
     vy_lista.append(v0y)
     vx_lista.append(v0x)
     dt = 0.1
-    for i in range (200):
+    for i in range (int(t/dt)):
         vy = vy_lista[i] + g*i*dt
         y = np.sin(kut * np.pi/180) * vy_lista[i] * i*dt
         x_lista.append(np.cos(kut *np.pi/180) * vx_lista[i] * i*dt)
