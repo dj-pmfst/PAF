@@ -20,8 +20,8 @@ def kosi_hitac(v0, kut):
     dt = 0.1
     for i in range (200):
         vy = vy_lista[i] + g*i*dt
-        y = np.sin(kut * np.pi/180) * vy_lista[i] * i*dt
-        x_lista.append(np.cos(kut *np.pi/180) * vx_lista[i] * i*dt)
+        y = vy_lista[i] * i*dt + 0.5*g*(i*dt)**2
+        x_lista.append(vx_lista[i] * i*dt)
         y_lista.append(y)
         vx_lista.append(v0x)
         vy_lista.append(vy)
