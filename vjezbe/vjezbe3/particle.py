@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 class particle:
-    def __init__(self):
+    def __init__(self, dt):
         self.t = []
         self.x = []
         self.y = []
@@ -11,7 +11,7 @@ class particle:
         self.vy = []
         self.ax = []
         self.ay = []
-        self.dt = 0.01
+        self.dt = dt
     
     def set_initial_conditions(self, v0, x0, y0, kut):
         self.v0 = v0
@@ -25,7 +25,7 @@ class particle:
         self.ay.append(-9.81)
     
     def reset(self):
-        self.__init__()
+        self.__init__(self.dt)
     
     def __move(self):
         self.t.append(self.t[-1] + self.dt)
@@ -53,4 +53,6 @@ class particle:
 
     def error(self):
         err = (abs(d - self.x[-1])/d)*100
-        return err
+        return err  
+
+ 
