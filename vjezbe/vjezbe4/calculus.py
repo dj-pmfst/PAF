@@ -21,8 +21,8 @@ def integral(f, a, b, N):
     dx = (b-a)/N
     x = np.linspace(a, b, int(N+1))
     for i in range(len(x)-1):
-        gornja+=(f(i)*dx)
-        donja+=(f(i+1)*dx)
+        gornja+=(f(i+1)*dx)
+        donja+=(f(i)*dx)
     return gornja, donja
 
 def integral_t(f, a, b, N):
