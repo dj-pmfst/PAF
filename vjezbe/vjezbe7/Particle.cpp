@@ -1,3 +1,4 @@
+#define _USE_MATH_DEFINES
 #include <Particle.h>
 #include <math.h>
 #include <cmath>
@@ -6,7 +7,6 @@ using namespace std;
 
 double Particle::evolve(){
     while(y>=0){
-        vx += 0.;
         vy += g*dt;
         x += vx*dt;
         y += vy*dt;
@@ -33,12 +33,12 @@ double Particle::time(){
 }
 
 Particle::Particle(double v, double theta, double x0, double y0){
-    theta = theta;
+    t = 0;
+    theta = (theta*M_PI)/180;
     v = v;
     x = x0;
     y = y0;
-    t = 0;
-
-    vx = cos(theta)*v;
+    
     vy = sin(theta)*v;
+    vx = cos(theta)*v;
 }
