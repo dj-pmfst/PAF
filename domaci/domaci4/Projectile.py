@@ -144,3 +144,9 @@ class Projectile():
             else:
                 print("Meta nije pogodena.")
                 break
+                
+        ax = plt.subplot()
+        a = plt.Circle((x,y), r, fill=False)
+        plt.plot(self.x, self.y)
+        ax.add_patch(a)
+        plt.show()
