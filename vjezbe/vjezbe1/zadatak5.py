@@ -1,10 +1,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
-def funkcija():
-    x1 = float(input("X koordinata prve točke: "))
-    y1 = float(input("Y koordinata prve točke: "))
-    x2 = float(input("X koordinata druge točke: "))
-    y2 = float(input("Y koordinata druge točke: "))
+def funkcija(x1, y1, x2, y2):
+    #x1 = float(input("X koordinata prve točke: "))
+    #y1 = float(input("Y koordinata prve točke: "))
+    #x2 = float(input("X koordinata druge točke: "))
+    #y2 = float(input("Y koordinata druge točke: "))
     a = y2 - y1
     b = x1 - x2
     c = a*(x1) + b*(y1)
@@ -27,4 +27,4 @@ def funkcija():
         plt.savefig(filename)
     else:
         plt.show()
-funkcija() 
+funkcija(1,2,3,4) 
